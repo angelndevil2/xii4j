@@ -1,5 +1,9 @@
 package com.github.angelndevil2.xii4j;
 
+import com.github.angelndevil2.xii4j.util.ReflectionUtil;
+
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * javax.management.j2ee.statistics.TimeStatistic
  *
@@ -29,4 +33,18 @@ public class TimeStatistic extends Statistic {
      */
     public long totalTime;
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void initializeFrom(Object stat)
+            throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+
+        super.initializeFrom(stat);
+
+        this.count = (Long) ReflectionUtil.invokeMethod(stat, "getCount");
+        this.maxTime = (Long) ReflectionUtil.invokeMethod(stat, "getMaxTime");
+        this.minTime = (Long) ReflectionUtil.invokeMethod(stat, "getMinTime");
+        this.totalTime = (Long) ReflectionUtil.invokeMethod(stat, "getTotalTime");
+    }
 }
