@@ -8,6 +8,7 @@ group 'com.github.angelndevil2'
 version majorVersion+'.'+minorVersion+'.'+fixVersion
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.5
 
