@@ -41,7 +41,7 @@ public class Stats {
      * @throws IllegalAccessException
      * @throws InvocationTargetException
      */
-    public void initializeFrom(Object stats)
+    public void initializeFrom(final Object stats)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
         if (stats == null) throw new IllegalArgumentException("stats object is null");
