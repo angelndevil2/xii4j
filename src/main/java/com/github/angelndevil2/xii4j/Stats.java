@@ -19,7 +19,7 @@ public class Stats {
     /**
      * statistic name and statistic itself
      */
-    public HashMap<String, Object> statistics;
+    public final HashMap<String, Object> statistics = new HashMap<String, Object>();
 
     /**
      *
