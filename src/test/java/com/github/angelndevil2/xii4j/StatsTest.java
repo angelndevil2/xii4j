@@ -3,7 +3,6 @@ package com.github.angelndevil2.xii4j;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * @author k, Created on 16. 3. 13.
@@ -31,7 +30,6 @@ public class StatsTest {
         boundaryStatistic.upperBound = 1000L;
         boundaryStatistic.unit = null;
 
-        stats.statistics = new HashMap<String, Object>();
         stats.statistics.put(countStatistic.name, countStatistic);
         stats.statistics.put(boundaryStatistic.name, boundaryStatistic);
 
