@@ -30,8 +30,8 @@ public class StatsTest {
         boundaryStatistic.upperBound = 1000L;
         boundaryStatistic.unit = null;
 
-        stats.statistics.put(countStatistic.name, countStatistic);
-        stats.statistics.put(boundaryStatistic.name, boundaryStatistic);
+        stats.statistics.add(countStatistic);
+        stats.statistics.add(boundaryStatistic);
 
         System.out.println(stats.toJsonString());
     }
