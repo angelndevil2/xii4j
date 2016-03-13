@@ -10,6 +10,10 @@ import java.util.HashMap;
 public class Stats {
 
     /**
+     * interface name for this class implement
+     */
+    public static transient final String IMPLEMENTED_FOR = "javax.management.j2ee.statistics.Stats";
+    /**
      * statistic name and statistic itself
      */
     public HashMap<String, Object> statistics;

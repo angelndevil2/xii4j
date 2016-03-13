@@ -1,9 +1,16 @@
 package com.github.angelndevil2.xii4j;
 
 /**
+ * javax.management.j2ee.statistics.TimeStatistic
+ *
  * @author k, Created on 16. 3. 13.
  */
 public class TimeStatistic extends Statistic {
+
+    /**
+     * interface name for this class implement
+     */
+    public static transient final String IMPLEMENTED_FOR = "javax.management.j2ee.statistics.TimeStatistic";
 
     /**
      * Number of times the operation was invoked since the beginning of this measurement.
