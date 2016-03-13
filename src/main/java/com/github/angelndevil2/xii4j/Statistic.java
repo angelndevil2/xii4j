@@ -1,5 +1,8 @@
 package com.github.angelndevil2.xii4j;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 /**
  * javax.management.j2ee.statistics.Statistic
  *
@@ -32,4 +35,13 @@ public class Statistic {
      * The unit of measurement for this Statistic.
      */
     public String unit;
+
+    /**
+     *
+     * @return json string represents this object
+     */
+    public String toJsonString() {
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        return gson.toJson(this);
+    }
 }

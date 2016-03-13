@@ -1,5 +1,8 @@
 package com.github.angelndevil2.xii4j;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.HashMap;
 
 /**
@@ -17,4 +20,13 @@ public class Stats {
      * statistic name and statistic itself
      */
     public HashMap<String, Object> statistics;
+
+    /**
+     *
+     * @return json string represents this object
+     */
+    public String toJsonString() {
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        return gson.toJson(this);
+    }
 }
