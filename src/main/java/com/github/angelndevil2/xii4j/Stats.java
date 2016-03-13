@@ -44,6 +44,8 @@ public class Stats {
     public void initializeFrom(Object stats)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
+        if (stats == null) throw new IllegalArgumentException("stats object is null");
+
         Object[] statistics = (Object[])stats.getClass().getMethod("getStatistics").invoke(stats);
         for (Object stat : statistics) {
 
