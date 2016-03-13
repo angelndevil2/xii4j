@@ -1,0 +1,48 @@
+ext {
+    majorVersion = '0'
+    minorVersion = '0'
+    fixVersion = '1'
+}
+
+group 'com.github.angelndevil2'
+version majorVersion+'.'+minorVersion+'.'+fixVersion
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest {
+
+        attributes('Implementation-Title':'com.github.angelndevil2'+"."+module.name,
+                'Implementation-Version': version,
+                'Created-By': 'angelndevil2'
+        )
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from tasks.javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}
+
+//apply from: 'maven-push.gradle'
