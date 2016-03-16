@@ -34,5 +34,7 @@ public class StatsTest {
         stats.statistics.add(boundaryStatistic);
 
         System.out.println(stats.toJsonString());
+
+
     }
 }
