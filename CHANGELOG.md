@@ -11,3 +11,7 @@
 * Add __JDBCStats__
 * Add __JDBCConnectionStats__
 * Add __JDBCConnectionPoolStats__
+
+0.1.1
+
+* gradle-wrapper version up to 2.10
